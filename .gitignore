@@ -1,0 +1,15 @@
+.idea
+node_modules
+typings
+typings/index.d.ts
+dist
+dist/
+.vscode/
+videos
+npm-debug.log
+aot
+stats.json
+prod
+prod/
+serverSide
+serverSice/

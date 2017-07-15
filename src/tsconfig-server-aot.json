@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "es2016",
+      "dom"
+    ],
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "typeRoots": [
+      "./node_modules/@types/"
+    ]
+  },
+  "compileOnSave": true,
+  "exclude": [
+    "node_modules/*",
+    "aot/",
+    "./main-aot.ts",
+    "./vendor.ts",
+    "./vendor-aot.ts",
+    "./main-server-aot.ts",
+    "ssr/",
+    "./express-engine.ts"
+  ],
+  "angularCompilerOptions": {
+    "genDir": "ssr/",
+    "skipMetadataEmit": true,
+    "skipCodeGeneration": false,
+    "entryModule": "./app/app.server.module#ServerAppModule"
+  }
+}

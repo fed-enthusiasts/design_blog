@@ -1,0 +1,37 @@
+button {
+    display: inline-block;
+    min-width: 6rem;
+    height: 2rem;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    line-height: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    background-color: #2d4041;
+    border: none;
+    outline: none;
+}
+
+input[type=checkbox] {
+    // visibility: hidden;
+    &:checked+label {
+        // left: 37px;
+    }
+}
+
+.basic-button {
+    display: block;
+    width: 20rem;
+    height: 6rem;
+    margin: 2rem auto;
+    font-size: 2rem;
+}
+
+.add-show-btn {
+    height: 3rem;
+    padding: 1rem;
+}

@@ -1,0 +1,63 @@
+input,
+select {
+    box-sizing: border-box;
+    width: 14rem;
+    height: 2rem;
+    padding: 0.5rem;
+    vertical-align: middle;
+    color: #36332e;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    background-color: #b0bdc9;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+select {
+    width: 20rem;
+}
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: white;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: white;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: white;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: white;
+}
+
+.form-input {
+    display: block;
+    margin: 1rem auto;
+    width: 100%;
+    height: 4rem;
+    font-size: 2rem;
+    text-align: center;
+    background: none;
+    border-bottom: 1px solid rgba(white, 0.7);
+}
+
+.validity-msg {
+    color: black;
+    font-size: 1.4rem;
+}

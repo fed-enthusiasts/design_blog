@@ -1,0 +1,6 @@
+<h2>{{greeting}}</h2>
+<img src="../../assets/images/IMDB.png" alt="">
+
+<ng-template [ngIf]="posts">
+    <div *ngFor="let post of posts">{{post.body}}</div>
+</ng-template>
