@@ -4,6 +4,35 @@ const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 const AotPlugin = require( '@ngtools/webpack' ).AotPlugin;
 const BundleAnalyzerPlugin = require( 'webpack-bundle-analyzer' ).BundleAnalyzerPlugin;
 
+/* const CleanWebpackPlugin = require( 'clean-webpack-plugin' );
+
+let pathsToClean = [
+    'dist'
+]
+
+
+let cleanOptions = {
+    watch: true
+} */
+
+const LiveReloadPlugin = require( 'webpack-livereload-plugin' );
+const liveRealoadOptions = {
+    protocol: 'http',
+   /*  port: 8000, */
+    hostname: 'localhost',
+    appendScriptTag: false,
+    ignore: null
+}
+
+const onbuild = require( './onbuild' );
+const WebpackOnBuildPlugin = require( 'on-build-webpack' );
+const filePrefixes = [ 'app', 'vendor', 'polyfills' ];
+const buildPaths = require( '../build.path' );
+const fs = require( 'fs' );
+
+const buildDir = buildPaths.pathDist;
+
+
 const helpers = require( './helpers' );
 const path = require( 'path' );
 
@@ -116,6 +145,11 @@ module.exports = {
             /angular(\\|\/)core(\\|\/)@angular/,
             path.resolve( __dirname, '../src' )
         ),
-      /*  new BundleAnalyzerPlugin()*/
+        /*   new CleanWebpackPlugin( pathsToClean, cleanOptions ), */
+
+        new WebpackOnBuildPlugin( onbuild ),
+        new LiveReloadPlugin(liveRealoadOptions)
+
+        /*  new BundleAnalyzerPlugin()*/
     ]
 };

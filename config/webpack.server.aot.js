@@ -4,6 +4,26 @@ const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 const AotPlugin = require( '@ngtools/webpack' ).AotPlugin;
 const BundleAnalyzerPlugin = require( 'webpack-bundle-analyzer' ).BundleAnalyzerPlugin;
 
+/* const CleanWebpackPlugin = require( 'clean-webpack-plugin' );
+
+let pathsToClean = [
+    'serverSide'
+]
+
+
+let cleanOptions = {
+    watch: true
+} */
+
+const LiveReloadPlugin = require( 'webpack-livereload-plugin' );
+const liveRealoadOptions = {
+    protocol: 'http',
+    port: 8000,
+    hostname: 'localhost',
+    appendScriptTag: false,
+    ignore: null
+}
+
 const helpers = require( './helpers' );
 const path = require( 'path' );
 
@@ -78,6 +98,8 @@ module.exports = {
                 'SSR': JSON.stringify( SSR ),
             }
         } ),
+        /*  new LiveReloadPlugin(liveRealoadOptions) */
+      /*   new CleanWebpackPlugin( pathsToClean, cleanOptions ) */
       /*  new BundleAnalyzerPlugin()*/
     ]
 };

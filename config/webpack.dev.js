@@ -36,7 +36,7 @@ module.exports = webpackMerge( commonConfig, {
       /angular(\\|\/)core(\\|\/)@angular/,
       path.resolve( __dirname, '../src' )
     ),
-          new BundleAnalyzerPlugin()
+   /*        new BundleAnalyzerPlugin() */
   ],
 
   devServer: {

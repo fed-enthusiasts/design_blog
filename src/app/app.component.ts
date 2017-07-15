@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
     public posts: any = null;
     public JSON_URL: string = 'https://jsonplaceholder.typicode.com/posts';
 
-    public greeting: string = 'Hi, from Angular!';
+    public greeting: string = 'Hi, from Angular! Hop! No stats! With live reload';
 
     constructor( @Inject( PLATFORM_ID ) private platformId: Object, public http: Http
         //public appViewContainer: ViewContainerRef
