@@ -6,11 +6,11 @@
   "scripts": {
     "develop": "cross-env AOT=false webpack-dev-server --inline --progress --port 8080",
     "build": "rimraf prod && webpack --config config/webpack.prod.js --progress --profile --bail",
-    "aot": "cross-env AOT=true rimraf dist && webpack --config config/webpack.aot.js --progress --profile --bail",
-    "serveraot": "cross-env SSR=true rimraf serverSide && webpack --config config/webpack.server.aot.js --progress --profile --bail",
+    "aot": "cross-env AOT=true rimraf dist && webpack --config config/webpack.aot.js --progress --profile --bail --watch",
+    "serveraot": "cross-env SSR=true rimraf serverSide && webpack --config config/webpack.server.aot.js --progress --profile --bail --watch",
     "serverdist": "node backend/server-dist.js",
     "serverprod": "node backend/server-prod.js",
-    "serverssr": "node serverSide/server.js",
+    "serverssr": "nodemon serverSide/server.js",
     "dev-aot-ssr": "npm run aot && npm run serveraot"
   },
   "repository": {
@@ -55,6 +55,7 @@
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.16.1",
     "node-sass": "^3.10.1",
+    "nodemon": "^1.11.0",
     "null-loader": "^0.1.1",
     "postcss-import": "^9.0.0",
     "postcss-loader": "^0.13.0",
