@@ -1,6 +1,10 @@
 import { RouterModule, Routes } from '@angular/router';
 
-const MAIN_ROUTES: Routes = [];
+import {TestRoutes} from "./modules/test/test.routes";
+
+const MAIN_ROUTES: Routes = [
+    ...TestRoutes
+];
 
 const otherwise = RouterModule.forRoot( [
     {
@@ -14,5 +18,5 @@ const otherwise = RouterModule.forRoot( [
 const mainRoutes = RouterModule.forRoot( MAIN_ROUTES );
 
 export const routes = [
-    otherwise
+    mainRoutes
 ];

@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-@Component( {
-    selector: 'app',
-    templateUrl: './app.component.html'
-} )
-export class TestComponent {
+@Component({
+    selector: 'test',
+    templateUrl: 'test.component.html'
+})
 
-    private greeting = 'Hello from TestComponent!';
+export class TestComponent implements OnInit {
+
+    public greeting: string = 'Hello from test component!';
+
+    ngOnInit(): void {
+        console.log('I am test component');
+    }
 
 }
