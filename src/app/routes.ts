@@ -1,9 +1,10 @@
 import { RouterModule, Routes } from '@angular/router';
 
-import {TestRoutes} from "./modules/test/test.routes";
-
 const MAIN_ROUTES: Routes = [
-    ...TestRoutes
+    {
+        path: 'test',
+        loadChildren: './modules/test/test.module#TestModule'
+    }
 ];
 
 const otherwise = RouterModule.forRoot( [
@@ -12,8 +13,7 @@ const otherwise = RouterModule.forRoot( [
         redirectTo: 'home',
         pathMatch: 'full'
     }
-] )
-
+]);
 
 const mainRoutes = RouterModule.forRoot( MAIN_ROUTES );
 

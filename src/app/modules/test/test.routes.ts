@@ -1,10 +1,12 @@
-import { Route } from '@angular/router';
+import {Route, RouterModule} from '@angular/router';
 
 import { TestComponent } from "./components/test.component"
 
-export const TestRoutes: Route[] = [
+const ROUTER_DATA: Route[] = [
     {
-        path: 'test',
-        component: TestComponent
+    path: '',
+    component: TestComponent
     }
 ];
+
+export const TestRoutes = RouterModule.forChild(ROUTER_DATA);
